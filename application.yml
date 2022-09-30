@@ -1,0 +1,27 @@
+proxy:
+  hide-navbar: true
+  landing-page: /app/DFAA
+  port: 80
+  authentication: simple
+  admin-groups: admins
+  users:
+  - name: Charan
+    password: cd143
+    groups: admins
+  - name: Rahul
+    password: rr143
+  docker:
+      internal-networking: true
+  
+  specs:
+  - id: FESapp
+    display-name: test FES app
+    description: test the application in local machine
+    container-cmd: []
+    container-image: appimg
+    container-network: sp-app-net2
+    access-groups: admins
+
+logging:
+  file:
+    shinyproxy.log
